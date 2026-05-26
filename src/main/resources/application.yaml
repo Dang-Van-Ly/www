@@ -1,0 +1,25 @@
+jwt:
+  key: ${SECRET_KEY}
+
+vnpay:
+  pay-url: ${VNP_URL}
+  return-url: ${VNP_RETURN_URL}
+  ipn-url: ${VNP_IPN_URL}
+  tmn-code: ${VNP_TMN_CODE}
+  hash-secret: ${VNP_HASH_SECRET}
+
+spring:
+  application:
+    name: XStore
+  ai:
+    openai:
+      api-key: ${GEMINI_API_KEY}
+      chat:
+        base-url: https://generativelanguage.googleapis.com/
+        completions-path: /v1beta/openai/chat/completions
+        options:
+          model: gemini-2.0-flash
+
+google:
+  client:
+    id: ${GOOGLE_CLIENT_ID}

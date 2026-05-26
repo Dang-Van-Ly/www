@@ -1,0 +1,18 @@
+package iuh.fit.xstore.repository;
+
+import iuh.fit.xstore.model.CartItem;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Repository
+public interface CartItemRepository extends JpaRepository<CartItem, Integer> {
+
+    Optional<CartItem> findByCartIdAndProductId(Integer cartId, Integer productId);
+
+    List<CartItem> findByCartId(Integer cartId);
+    Optional<CartItem> findByCartIdAndProductIdAndStockId(Integer cartId,Integer productId,Integer stockId);
+    Optional<CartItem> findByCartIdAndProductIdAndStockIdAndProductInfoId(Integer cartId, Integer productId, Integer stockId, Integer productInfoId);
+}
